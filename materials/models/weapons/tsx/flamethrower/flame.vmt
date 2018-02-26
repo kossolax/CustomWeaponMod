@@ -1,0 +1,10 @@
+"Sprite"
+{
+	"$basetexture" "models/weapons/tsx/flamethrower/flame"
+	
+	"$spriteorientation" "vp_parallel_oriented"
+	
+	"$translucent" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+}

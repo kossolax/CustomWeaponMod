@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/tsx/flak_cannon/FlakTex1"
+	"$translucent" "1"
+}

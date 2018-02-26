@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" 			"models/weapons/tsx/flamethrower/v_flamethrower"
+	"$model" 			1
+	"$alphatest"			1
+	"$translucent" 			1
+}

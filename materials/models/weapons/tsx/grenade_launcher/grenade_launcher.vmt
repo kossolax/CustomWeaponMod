@@ -1,0 +1,4 @@
+VertexLitGeneric
+{
+	$baseTexture "models/weapons/tsx/grenade_launcher/grenade_launcher"
+}

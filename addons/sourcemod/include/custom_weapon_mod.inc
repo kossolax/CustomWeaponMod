@@ -26,6 +26,7 @@ native int CWM_Spawn(int id, int client, float pos[3], float ang[3]);
 
 native int CWM_ShootProjectile(int client, int entity, char model[PLATFORM_MAX_PATH], char name[32], float spreadAngle = 0.0, float speed = FLT_MAX, CWM_HitCallback fonction = INVALID_FUNCTION);
 native int CWM_ShootHull(int client, int entity, float size, float hit[3]);
+native int CWM_ShootRay(int client, int entity, float hit[3]);
 native int CWM_ShootDamage(int client, int entity, float hit[3]);
 native int CWM_ShootExplode(int client, int wpnid, int entity, float radius);
 
@@ -70,6 +71,7 @@ enum CWM_DataInteger {
 	WSI_MaxAmmunition,
 	WSI_Skin,
 	WSI_State,
+	WSI_ShotFired,
 	
 	WSI_Max
 };
@@ -83,6 +85,7 @@ enum CWM_DataFloat {
 	Float:WSF_NextIdle,
 	Float:WSF_AnimationSpeed,
 	Float:WSF_Spread,
+	Float:WSF_Recoil,
 	
 	WSF_Max
 };

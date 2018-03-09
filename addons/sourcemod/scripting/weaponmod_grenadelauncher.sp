@@ -46,12 +46,14 @@ public void OnAllPluginsLoaded() {
 	CWM_SetInt(id, WSI_AttackBullet, 	1);
 	CWM_SetInt(id, WSI_MaxBullet, 		5);
 	CWM_SetInt(id, WSI_MaxAmmunition, 	25);
+	CWM_SetInt(id, WSI_ShotFired,		5);
 	
 	CWM_SetFloat(id, WSF_Speed,			240.0);
 	CWM_SetFloat(id, WSF_ReloadSpeed,	100/30.0);
 	CWM_SetFloat(id, WSF_AttackSpeed,	1.0);
 	CWM_SetFloat(id, WSF_AttackRange,	RANGE_MELEE * 4.0);
 	CWM_SetFloat(id, WSF_Spread, 		0.0);
+	CWM_SetFloat(id, WSF_Recoil, 		45.0);
 	
 	CWM_AddAnimation(id, WAA_Idle, 		2,	60, 30);
 	CWM_AddAnimation(id, WAA_Draw, 		3,	29, 30);

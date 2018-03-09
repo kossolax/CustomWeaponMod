@@ -38,12 +38,14 @@ public void OnAllPluginsLoaded() {
 	CWM_SetInt(id, WSI_AttackBullet, 	1);
 	CWM_SetInt(id, WSI_MaxBullet, 		250);
 	CWM_SetInt(id, WSI_MaxAmmunition, 	500);
+	CWM_SetInt(id, WSI_ShotFired,		10);
 	
 	CWM_SetFloat(id, WSF_Speed,			300.0);
 	CWM_SetFloat(id, WSF_ReloadSpeed,	65/30.0);
 	CWM_SetFloat(id, WSF_AttackSpeed,	0.1);
 	CWM_SetFloat(id, WSF_AttackRange,	RANGE_MELEE + 16.0);
 	CWM_SetFloat(id, WSF_Spread, 		0.0);
+	CWM_SetFloat(id, WSF_Recoil, 		5.0);
 	
 	CWM_AddAnimation(id, WAA_Idle, 		3,	64, 30);
 	CWM_AddAnimation(id, WAA_Draw, 		7,	65, 30);
@@ -91,9 +93,6 @@ public Action OnAttack(int client, int entity) {
 	}
 	
 	return Plugin_Continue;
-}
-public bool TraceEntityFilterSelf(int entity, int contentsMask, any data) {
-	return entity != data;
 }
 public void OnMapStart() {
 	

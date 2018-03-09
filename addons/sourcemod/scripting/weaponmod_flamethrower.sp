@@ -44,12 +44,14 @@ public void OnAllPluginsLoaded() {
 	CWM_SetInt(id, WSI_AttackBullet, 	1);
 	CWM_SetInt(id, WSI_MaxBullet, 		250);
 	CWM_SetInt(id, WSI_MaxAmmunition, 	500);
+	CWM_SetInt(id, WSI_ShotFired,		1);
 	
 	CWM_SetFloat(id, WSF_Speed,			240.0);
 	CWM_SetFloat(id, WSF_ReloadSpeed,	1.0);
 	CWM_SetFloat(id, WSF_AttackSpeed,	0.1);
 	CWM_SetFloat(id, WSF_AttackRange,	RANGE_MELEE * 2.0);
 	CWM_SetFloat(id, WSF_Spread, 		0.0);
+	CWM_SetFloat(id, WSF_Recoil, 		0.0);
 	
 	CWM_AddAnimation(id, WAA_Idle, 		3,	64, 30);
 	CWM_AddAnimation(id, WAA_Draw, 		7,	29, 30);
@@ -104,11 +106,7 @@ public Action DecreaseParticleCount(Handle timer, any none) {
 public Action OnProjectileHit(int client, int wpnid, int entity, int target) {
 	if( target > 0 ) {
 		if( target < MaxClients ) {
-#if defined ROLEPLAY
-			rp_ClientIgnite(target, 10.0, client);
-#else
 			IgniteEntity(target, 10.0);
-#endif
 			return Plugin_Continue;
 		}
 	}

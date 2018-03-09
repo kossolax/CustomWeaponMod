@@ -56,12 +56,14 @@ public void OnAllPluginsLoaded() {
 	CWM_SetInt(id, WSI_AttackBullet, 	1);
 	CWM_SetInt(id, WSI_MaxBullet, 		50);
 	CWM_SetInt(id, WSI_MaxAmmunition, 	0);
+	CWM_SetInt(id, WSI_ShotFired,		1);
 	
 	CWM_SetFloat(id, WSF_Speed,			240.0);
 	CWM_SetFloat(id, WSF_ReloadSpeed,	30/15.0);
 	CWM_SetFloat(id, WSF_AttackSpeed,	20/15.0);
 	CWM_SetFloat(id, WSF_AttackRange,	RANGE_MELEE * 4.0);
 	CWM_SetFloat(id, WSF_Spread, 		0.0);
+	CWM_SetFloat(id, WSF_Recoil, 		45.0);
 	
 	CWM_AddAnimation(id, WAA_Idle, 		0,	14,	30);
 	CWM_AddAnimation(id, WAA_Draw, 		1,	7,	30);
@@ -95,6 +97,7 @@ public Action OnAttack(int client, int entity) {
 		float life = GetRandomFloat(2.0, 3.0);
 		Format(tmp, sizeof(tmp), "!self,Kill,,%.1f,-1", life);
 		SetEntPropFloat(ent,  Prop_Send, "m_flModelScale", 0.1);
+		
 		SetEntityGravity(ent, 0.65);
 		SetEntPropFloat(ent, Prop_Send, "m_flElasticity", 0.65);
 		DispatchKeyValue(ent, "OnUser1", tmp);
